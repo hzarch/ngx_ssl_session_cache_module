@@ -1,0 +1,18 @@
+diff -ru src/event/ngx_event_openssl.c src2/event/ngx_event_openssl.c
+--- src/event/ngx_event_openssl.c	2017-07-31 14:41:47.204433207 -0400
++++ src2/event/ngx_event_openssl.c	2017-07-31 14:44:27.810431433 -0400
+@@ -1338,6 +1338,14 @@
+         return NGX_AGAIN;
+     }
+ 
++    if (sslerr == SSL_ERROR_WANT_ASYNC)
++    {
++        c->read->handler = ngx_ssl_handshake_handler;
++        c->write->handler = ngx_ssl_handshake_handler;
++        c->read->ready = 0;
++        return NGX_AGAIN;
++    }
++
+     err = (sslerr == SSL_ERROR_SYSCALL) ? ngx_errno : 0;
+ 
+     c->ssl->no_wait_shutdown = 1;

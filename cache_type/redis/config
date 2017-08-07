@@ -1,0 +1,4 @@
+ngx_addon_name=ngx_ssl_session_redis_module
+HTTP_MODULES="$HTTP_MODULES ngx_ssl_session_redis_module"
+NGX_ADDON_SRCS="$NGX_ADDON_SRCS $ngx_addon_dir/ngx_ssl_session_redis_module.c"
+NGX_ADDON_DEPS="$NGX_ADDON_DEPS $ngx_addon_dir/../../ngx_ssl_session_cache_module.h"
