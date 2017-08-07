@@ -64,8 +64,8 @@ However, there is also need to make some changes to the nginx code, see patch
 
 # Compilation
 
-	1. patch –p0 < dir/nginx_1.12.0_ssl_session_cache.patch
-	2. auto/configure --add-module=dir --add-module=dir/cache_type/memcached --add-module=dir/cache_type/redis
+	1. patch –p0 < path-to-module/nginx_1.12.0_ssl_session_cache.patch
+	2. auto/configure --add-module=path-to-module --add-module=path-to-module/cache_type/memcached --add-module=path-to-module/cache_type/redis
 
 # Author
 
