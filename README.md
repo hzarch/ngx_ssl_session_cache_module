@@ -26,7 +26,7 @@ However, there is also need to make some changes to the nginx code, see patch
 　　　　*[count=size] [timeout=number] [auth=password]*
 
 **Default:** *remote_ssl_session_cache*  
-　　　　*addr=127.0.0.1 port=6379 type=redis interval=200 count=5000 timeout=1000*
+　　　　*addr=uri [port=6379 type=redis interval=200 count=5000 timeout=1000]*
 
 **Context:** *http,server*
 
