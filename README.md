@@ -32,7 +32,7 @@ However, there is also need to make some changes to the nginx code, see patch
 
 *   off
 
-    *Disable the distributed session reuse function.
+    * Disable the distributed session reuse function.
 
 *   addr
     
@@ -64,7 +64,7 @@ However, there is also need to make some changes to the nginx code, see patch
 
 # Compilation
 
-	1. pathch –p0 < dir/nginx_1.12.0_ssl_session_cache.patch
+	1. patch –p0 < dir/nginx_1.12.0_ssl_session_cache.patch
 	2. auto/configure --add-module=dir --add-module=dir/cache_type/memcached --add-module=dir/cache_type/redis
 
 # Author
