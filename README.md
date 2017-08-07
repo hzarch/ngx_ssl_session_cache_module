@@ -21,7 +21,7 @@ However, there is also need to make some changes to the nginx code, see patch
 
 ## remote_ssl_session_cache
   
-**Syntax:** *remote_ssl_session_cache [on | off] addr=address*  
+**Syntax:** *remote_ssl_session_cache [off] addr=address*  
 　　　　*[port=number] [type=redis | memcached] [interval=number]*  
 　　　　*[count=size] [timeout=number] [auth=password]*
 
@@ -30,9 +30,9 @@ However, there is also need to make some changes to the nginx code, see patch
 
 **Context:** *http,server*
 
-*   on/off
+*   off
 
-    * Enable or Disable the distributed session reuse function.
+    *Disable the distributed session reuse function.
 
 *   addr
     
@@ -64,8 +64,8 @@ However, there is also need to make some changes to the nginx code, see patch
 
 # Compilation
 
-	1. pathch –p0 < path-to-module/nginx_1.12.0_ssl_session_cache.patch
-	2. path-to-nginx/configure --add-module=path-to-module/cache_type/memcached --add-module=path-to-module/cache_type/redis
+	1. pathch –p0 < dir/nginx_1.12.0_ssl_session_cache.patch
+	2. auto/configure --add-module=dir --add-module=dir/cache_type/memcached --add-module=dir/cache_type/redis
 
 # Author
 
