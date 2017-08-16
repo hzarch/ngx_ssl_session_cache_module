@@ -19,8 +19,11 @@ static int ngx_http_ssl_session_cache_conf_index = -1;
 
 static ngx_command_t ngx_http_ssl_session_cache_commands[] = {
     {
+        /* only in http main.
+           new request order: find_server -> new_session 
+           request with session id order: get_session -> find_server */
         ngx_string("remote_ssl_session_cache"),
-        NGX_HTTP_MAIN_CONF | NGX_HTTP_SRV_CONF | NGX_CONF_1MORE,
+        NGX_HTTP_MAIN_CONF | NGX_CONF_1MORE,
         ngx_http_ssl_cache_conf,
         NGX_HTTP_SRV_CONF_OFFSET,
         0,
